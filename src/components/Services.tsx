@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 export default function Services() {
 
@@ -56,19 +57,13 @@ export default function Services() {
               "
             >
 
-              {/* icon */}
-
               <div className="text-4xl mb-6">
                 {service.icon}
               </div>
 
-              {/* title */}
-
               <h3 className="text-xl text-white tracking-wide">
                 {service.title}
               </h3>
-
-              {/* description */}
 
               <p className="text-neutral-400 mt-3">
                 {service.desc}
@@ -77,6 +72,27 @@ export default function Services() {
             </div>
 
           ))}
+
+        </div>
+
+        {/* button */}
+
+        <div className="mt-14 flex justify-center">
+
+          <Link
+            to="/services"
+            className="
+            px-8 py-3
+            border border-neutral-700
+            rounded-md
+            text-neutral-300
+            hover:border-cyan-500
+            hover:text-white
+            transition
+            "
+          >
+            {t("services.link")}
+          </Link>
 
         </div>
 

@@ -27,11 +27,12 @@
     "proto": {
       "title": "Prototypage rapide",
       "desc": "Validation rapide de concepts et itérations pour vos projets."
-    }
+    },
+    "link": "Voir nos services"
   },
   "featured": {
-    "title": "Featured Prints",
-    "view": "View All Models"
+    "title": "Modèles en vedette",
+    "view": "Voir tous les modèles"
   },
   "notfound": {
     "pageNotFound": "Page introuvable",

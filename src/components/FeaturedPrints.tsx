@@ -3,6 +3,7 @@ import Gear from "../assets/images/gear_print.png"
 import PhoneStand from "../assets/images/phone_stand.png"
 import Vase from "../assets/images/vase.png"
 import EngineerPart from "../assets/images/engineer_part.png"
+import { Link } from "react-router-dom"
 
 export default function FeaturedPrints() {
 
@@ -65,6 +66,7 @@ export default function FeaturedPrints() {
                 <img
                   src={print.img}
                   alt={print.name}
+                  loading="lazy"
                   className="
                   w-full
                   h-[220px]
@@ -72,6 +74,7 @@ export default function FeaturedPrints() {
                   transition
                   duration-500
                   group-hover:scale-110
+
                   "
                 />
 
@@ -97,7 +100,8 @@ export default function FeaturedPrints() {
 
         <div className="mt-14 text-center">
 
-          <button
+             <Link
+              to="/models"
             className="
             px-8 py-3
             border border-neutral-700
@@ -109,7 +113,7 @@ export default function FeaturedPrints() {
             "
           >
             {t("featured.view")}
-          </button>
+          </Link>
 
         </div>
 
