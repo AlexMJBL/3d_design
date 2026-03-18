@@ -19,7 +19,7 @@ export default function Contact() {
         "service_h8mmzxw",
         "template_tt710tz",
         form,
-        "X3jg4Ev4AeWA31DtwJHFz"
+        "PDUBMOTXiCgvdsEkb"
       )
 
       navigate("/success")
