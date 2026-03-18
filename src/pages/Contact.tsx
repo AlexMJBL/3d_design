@@ -1,14 +1,30 @@
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 
 export default function Contact() {
 
   const { t } = useTranslation()
+  const navigate = useNavigate()
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+
+    e.preventDefault()
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString()
+    })
+
+    navigate("/success")
+  }
 
   return (
 
     <section className="relative bg-neutral-950 text-neutral-200 py-24 px-6 overflow-hidden">
-
-      {/* grid background */}
 
       <div
         className="absolute inset-0 opacity-[0.05]
@@ -17,8 +33,6 @@ export default function Contact() {
       />
 
       <div className="relative max-w-6xl mx-auto">
-
-        {/* Title */}
 
         <div className="text-center mb-16">
 
@@ -32,26 +46,20 @@ export default function Contact() {
 
         </div>
 
-        {/* grid */}
-
         <div className="grid md:grid-cols-2 gap-14">
 
           {/* FORM */}
 
           <form
-  name="contact"
-  method="POST"
-  action="/success"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field"
-  className="space-y-6"
->
-
-            {/* Netlify hidden fields */}
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
 
             <input type="hidden" name="form-name" value="contact" />
-
-            {/* name */}
 
             <div>
               <label className="text-sm text-neutral-400">
@@ -66,8 +74,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* email */}
-
             <div>
               <label className="text-sm text-neutral-400">
                 {t("contact.email")}
@@ -81,8 +87,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* message */}
-
             <div>
               <label className="text-sm text-neutral-400">
                 {t("contact.message")}
@@ -95,8 +99,6 @@ export default function Contact() {
                 className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md focus:border-cyan-500 outline-none"
               />
             </div>
-
-            {/* button */}
 
             <button
               type="submit"
