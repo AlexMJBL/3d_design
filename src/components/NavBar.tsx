@@ -67,12 +67,12 @@ export default function Navbar() {
           </NavLink>
 
           <NavLink
-            to="/About"
+            to="/services"
             className={({ isActive }) =>
               `nav-link ${isActive ? "nav-link-active text-white" : "text-neutral-400 hover:text-white"}`
             }
           >
-            {t("nav.about")}
+            {t("nav.services")}
           </NavLink>
 
           <NavLink

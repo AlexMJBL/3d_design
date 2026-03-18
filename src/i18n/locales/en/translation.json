@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "models": "Models",
-    "about": "Services",
+    "services": "Services",
     "contact": "Contact",
     "quote": "Get a Quote",
     "conception": "AND CONCEPTION",
@@ -34,6 +34,11 @@
     "title": "Featured Prints",
     "view": "View All Models"
   },
+  "footer": {
+  "navigation": "Navigation",
+  "contact": "Contact",
+  "rights": "All rights reserved"
+},
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",

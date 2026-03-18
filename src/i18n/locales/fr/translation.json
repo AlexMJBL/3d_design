@@ -2,7 +2,7 @@
   "nav": {
     "home": "Accueil",
     "models": "Modèles",
-    "about": "Services",
+    "services": "Services",
     "contact": "Contact",
     "quote": "Demander un devis",
     "conception": "ET CONCEPTION",
@@ -33,6 +33,11 @@
   "featured": {
     "title": "Modèles en vedette",
     "view": "Voir tous les modèles"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "Tous droits réservés"
   },
   "notfound": {
     "pageNotFound": "Page introuvable",

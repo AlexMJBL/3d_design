@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound"
 import NavBar from "./components/NavBar";
 import Models from "./pages/Models";
 import Services from "./pages/Services";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/contact" element={<Contact />} />
        <Route path="*" element={<NotFound />} />
     </Routes>
+    <Footer/>
     </>
 
   )
