@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Models from "./pages/Models";
 import Services from "./pages/Services";
 import Footer from "./components/Footer";
+import Success from "./pages/Success"
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/models" element={<Models />} />
-            <Route path="/services" element={<Services />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/success" element={<Success />} />
        <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer/>
