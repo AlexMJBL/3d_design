@@ -76,7 +76,7 @@ export default function Navbar() {
           </NavLink>
 
           <NavLink
-            to="/Contact"
+            to="/contact"
             className={({ isActive }) =>
               `nav-link ${isActive ? "nav-link-active text-white" : "text-neutral-400 hover:text-white"}`
             }
@@ -109,9 +109,9 @@ export default function Navbar() {
         <div className="md:hidden border-t border-neutral-800 px-8 pb-6 pt-4 flex flex-col gap-6 text-neutral-300">
 
           <NavLink to="/" className="hover:text-white">{t("nav.home")}</NavLink>
-          <NavLink to="/" className="hover:text-white">{t("nav.models")}</NavLink>
-          <NavLink to="/" className="hover:text-white">{t("nav.about")}</NavLink>
-          <NavLink to="/" className="hover:text-white">{t("nav.contact")}</NavLink>
+          <NavLink to="/models" className="hover:text-white">{t("nav.models")}</NavLink>
+          <NavLink to="/services" className="hover:text-white">{t("nav.services")}</NavLink>
+          <NavLink to="/contact" className="hover:text-white">{t("nav.contact")}</NavLink>
 
           <Link
             to="/quote"
