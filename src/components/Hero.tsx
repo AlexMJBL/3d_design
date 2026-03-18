@@ -7,7 +7,7 @@ export default function Hero() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-neutral-950 text-neutral-200 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-neutral-950 text-neutral-200 overflow-hidden pt-10">
 
       {/* grid background */}
 
