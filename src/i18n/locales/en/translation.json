@@ -39,6 +39,16 @@
   "contact": "Contact",
   "rights": "All rights reserved"
 },
+"contact": {
+  "title": "Contact Us",
+  "subtitle": "Have a question or a project in mind? Send us a message.",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "send": "Send Message",
+  "info": "Contact Information",
+  "description": "We usually respond within 24 hours."
+},
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",
