@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next"
 export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation()
+  const { t} = useTranslation()
 
 
   return (

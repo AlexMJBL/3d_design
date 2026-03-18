@@ -1,4 +1,8 @@
 import { useTranslation } from "react-i18next"
+import Gear from "../assets/images/gear_print.png"
+import PhoneStand from "../assets/images/phone_stand.png"
+import Vase from "../assets/images/vase.png"
+import EngineerPart from "../assets/images/engineer_part.png"
 
 export default function FeaturedPrints() {
 
@@ -7,19 +11,19 @@ export default function FeaturedPrints() {
   const prints = [
     {
       name: "Gear Assembly",
-      img: "/prints/gear.jpg"
+      img: Gear
     },
     {
       name: "Phone Stand",
-      img: "/prints/phone-stand.jpg"
+      img: PhoneStand
     },
     {
       name: "Mechanical Part",
-      img: "/prints/mechanical.jpg"
+      img: EngineerPart
     },
     {
       name: "Decorative Vase",
-      img: "/prints/vase.jpg"
+      img: Vase
     }
   ]
 
