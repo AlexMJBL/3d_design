@@ -41,13 +41,16 @@ export default function Contact() {
           <form
             name="contact"
             method="POST"
+            action="/"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
             className="space-y-6"
           >
 
-            {/* required for netlify */}
+            {/* Netlify hidden fields */}
 
             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
 
             {/* name */}
 
