@@ -8,6 +8,12 @@
     "conception" : "AND CONCEPTION",
     "print" : "3D PRINTING"
   },
+    "hero": {
+    "title": "High Precision 3D Printing",
+    "subtitle": "Custom parts, rapid prototyping and professional 3D design for engineering and creative projects.",
+    "quote": "Get a Quote",
+    "models": "View Models"
+  },
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",

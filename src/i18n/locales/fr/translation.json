@@ -8,6 +8,12 @@
     "conception" : "ET CONCEPTION",
     "print" : "IMPRESSION 3D"
   },
+    "hero": {
+    "title": "Impression 3D de haute précision",
+    "subtitle": "Pièces sur mesure, prototypage rapide et conception 3D professionnelle.",
+    "quote": "Demander un devis",
+    "models": "Voir les modèles"
+  },
   "notfound": {
     "pageNotFound": "Page introuvable",
     "description": "La page que vous cherchez est introuvable.",
