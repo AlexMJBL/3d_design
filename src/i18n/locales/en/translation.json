@@ -1,5 +1,16 @@
 {
-  "pageNotFound": "Page not found",
-  "description": "The page you are looking for cannot be found.",
-  "home": "Return Home"
+  "nav": {
+    "home": "Home",
+    "models": "Models",
+    "about": "About",
+    "contact": "Contact",
+    "quote": "Get a Quote",
+    "conception" : "AND CONCEPTION",
+    "print" : "3D PRINTING"
+  },
+  "notfound": {
+    "pageNotFound": "Page not found",
+    "description": "The page you are looking for cannot be found.",
+    "home": "Return Home"
+  }
 }

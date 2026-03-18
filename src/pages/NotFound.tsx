@@ -27,11 +27,11 @@ export default function NotFound() {
         <div className="w-24 h-[1px] bg-neutral-700 mx-auto my-6"></div>
 
         <h2 className="text-xl text-neutral-300">
-          {t("pageNotFound")}
+          {t("notfound.pageNotFound")}
         </h2>
 
         <p className="text-neutral-400 text-lg tracking-wide mt-2">
-          {t("description")}
+          {t("notfound.description")}
         </p>
 
         <Link
@@ -39,7 +39,7 @@ export default function NotFound() {
           className="inline-block mt-10 px-7 py-3 border border-neutral-700 rounded-sm
           hover:border-neutral-400 hover:text-white transition duration-300"
         >
-          {t("home")}
+          {t("notfound.home")}
         </Link>
 
       </div>
