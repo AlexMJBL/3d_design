@@ -23,3 +23,25 @@
 .nav-link-active::after {
   width: 100%;
 }
+
+/* floating animation */
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+}
+
+.float-object {
+  animation: float 6s ease-in-out infinite;
+}
