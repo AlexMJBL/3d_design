@@ -25,7 +25,7 @@ export default function Services() {
 
   return (
 
-    <section className="bg-neutral-950 text-neutral-200 py-14 px-6 pb-30">
+    <section className="bg-neutral-950 text-neutral-200  px-6 pb-20">
 
       <div className="max-w-7xl mx-auto">
 
@@ -37,7 +37,7 @@ export default function Services() {
 
         {/* grid */}
 
-        <div className="mt-16 grid md:grid-cols-3 gap-10">
+        <div className="mt-16 grid md:grid-cols-3 gap-10 py-10">
 
           {services.map((service, i) => (
 

@@ -42,7 +42,7 @@ export default function FeaturedPrints() {
 
         {/* grid */}
 
-        <div className="mt-16 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-16 grid sm:grid-cols-2 md:grid-cols-4 gap-6 py-10">
 
           {prints.map((print, i) => (
 
