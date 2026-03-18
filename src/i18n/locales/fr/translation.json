@@ -5,14 +5,33 @@
     "about": "À propos",
     "contact": "Contact",
     "quote": "Demander un devis",
-    "conception" : "ET CONCEPTION",
-    "print" : "IMPRESSION 3D"
+    "conception": "ET CONCEPTION",
+    "print": "IMPRESSION 3D"
   },
-    "hero": {
+  "hero": {
     "title": "Impression 3D de haute précision",
     "subtitle": "Création de pièces techniques et esthétiques sur mesure, prototypage rapide et conception 3D professionnelle.",
     "quote": "Demander un devis",
     "models": "Voir les modèles"
+  },
+  "services": {
+    "title": "Services",
+    "print": {
+      "title": "Impression 3D",
+      "desc": "Fabrication de pièces techniques ou esthétiques avec une grande précision."
+    },
+    "design": {
+      "title": "Conception 3D",
+      "desc": "Modélisation et création de pièces personnalisées selon vos besoins."
+    },
+    "proto": {
+      "title": "Prototypage rapide",
+      "desc": "Validation rapide de concepts et itérations pour vos projets."
+    }
+  },
+  "featured": {
+    "title": "Featured Prints",
+    "view": "View All Models"
   },
   "notfound": {
     "pageNotFound": "Page introuvable",

@@ -5,14 +5,33 @@
     "about": "About",
     "contact": "Contact",
     "quote": "Get a Quote",
-    "conception" : "AND CONCEPTION",
-    "print" : "3D PRINTING"
+    "conception": "AND CONCEPTION",
+    "print": "3D PRINTING"
   },
-    "hero": {
+  "hero": {
     "title": "High Precision 3D Printing",
     "subtitle": "Custom technical and aesthetic parts, rapid prototyping and professional 3D design.",
     "quote": "Get a Quote",
     "models": "View Models"
+  },
+  "services": {
+    "title": "Services",
+    "print": {
+      "title": "3D Printing",
+      "desc": "High precision fabrication of technical or aesthetic parts."
+    },
+    "design": {
+      "title": "3D Design",
+      "desc": "Custom modeling and creation of parts tailored to your needs."
+    },
+    "proto": {
+      "title": "Rapid Prototyping",
+      "desc": "Fast validation of concepts and iterations for your projects."
+    }
+  },
+  "featured": {
+    "title": "Featured Prints",
+    "view": "View All Models"
   },
   "notfound": {
     "pageNotFound": "Page not found",
