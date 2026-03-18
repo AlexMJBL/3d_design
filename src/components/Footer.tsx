@@ -8,13 +8,22 @@ export default function Footer() {
 
   return (
 
-    <footer className="bg-neutral-950 border-t border-neutral-800 text-neutral-400">
+ <footer className="relative bg-neutral-950 border-t border-neutral-800 text-neutral-400 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12 items-start">
+  {/* grid background */}
+
+  <div
+    className="absolute inset-0 opacity-[0.04]
+    bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]
+    bg-[size:80px_80px]"
+  />
+
+  {/* content */}
+  <div className="relative max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12 items-start">
 
         {/* Brand */}
 
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
 
 <p className="text-white mb-5 text-sm tracking-widest uppercase">
             3D Printing • Design • Prototyping
@@ -31,7 +40,7 @@ export default function Footer() {
 
         {/* Navigation */}
 
-        <div>
+        <div className="md:ml-16 text-center md:text-left">
 
           <h4 className="text-white mb-5 text-sm tracking-widest uppercase">
             {t("footer.navigation")}
@@ -61,7 +70,7 @@ export default function Footer() {
 
         {/* Contact */}
 
-        <div>
+       <div className="text-center md:text-left">
 
           <h4 className="text-white mb-5 text-sm tracking-widest uppercase">
             {t("footer.contact")}
@@ -91,7 +100,7 @@ export default function Footer() {
 
       {/* bottom */}
 
-      <div className="border-t border-neutral-800 py-6 text-center text-sm text-neutral-500">
+      <div className=" py-6 text-center text-sm text-neutral-500">
 
         © {new Date().getFullYear()} MJBLSolutions — {t("footer.rights")}
 
