@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
+import emailjs from "@emailjs/browser"
 
 export default function Contact() {
 
@@ -11,15 +12,24 @@ export default function Contact() {
     e.preventDefault()
 
     const form = e.currentTarget
-    const formData = new FormData(form)
 
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString()
-    })
+    try {
 
-    navigate("/success")
+      await emailjs.sendForm(
+        "service_h8mmzxw",
+        "template_tt710tz",
+        form,
+        "X3jg4Ev4AeWA31DtwJHFz"
+      )
+
+      navigate("/success")
+
+    } catch (error) {
+
+      console.error("Email error:", error)
+      alert("Erreur lors de l'envoi du message.")
+
+    }
   }
 
   return (
@@ -51,15 +61,9 @@ export default function Contact() {
           {/* FORM */}
 
           <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
             className="space-y-6"
           >
-
-            <input type="hidden" name="form-name" value="contact" />
 
             <div>
               <label className="text-sm text-neutral-400">
