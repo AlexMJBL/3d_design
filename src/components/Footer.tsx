@@ -80,17 +80,17 @@ export default function Footer() {
 
           <div className="text-sm space-y-3">
 
-      <a 
+     <a 
   href="tel:2364574318"
-  className="hover:text-cyan-400 transition"
+  className="block hover:text-cyan-400 transition"
 >
   <span className="mr-2">📞</span>
   236-457-4318
 </a>
 
-            <a 
+<a 
   href="mailto:mjblsolutions@gmail.com"
-  className="hover:text-cyan-400 transition"
+  className="block hover:text-cyan-400 transition"
 >
   <span className="text-cyan-400 mr-2">@</span>
   mjblsolutions@gmail.com
