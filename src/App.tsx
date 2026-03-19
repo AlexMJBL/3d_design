@@ -8,11 +8,13 @@ import Services from "./pages/Services";
 import Footer from "./components/Footer";
 import Success from "./pages/Success"
 import Quote from "./pages/Quote";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
   return (
-    <>    
+    <>  
+    <ScrollToTop />
     <NavBar />
      <Routes>
       <Route path="/" element={<Home />} />
