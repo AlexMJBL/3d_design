@@ -4,39 +4,39 @@ import Logo from "../assets/images/logo_light.png"
 
 export default function Footer() {
 
-  
+
 
   const { t } = useTranslation()
 
   return (
 
- <footer className="relative bg-neutral-950 border-t border-neutral-800 text-neutral-400 overflow-hidden">
+    <footer className="relative bg-neutral-950 border-t border-neutral-800 text-neutral-400 overflow-hidden">
 
-  {/* grid background */}
+      {/* grid background */}
 
-  <div
-    className="absolute inset-0 opacity-[0.04]
+      <div
+        className="absolute inset-0 opacity-[0.04]
     bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]
     bg-[size:80px_80px]"
-  />
+      />
 
-  {/* content */}
-  <div className="relative max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12 items-start">
+      {/* content */}
+      <div className="relative max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12 items-start">
 
         {/* Brand */}
 
         <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
 
-<p className="text-white mb-5 text-sm tracking-widest uppercase">
+          <p className="text-white mb-5 text-sm tracking-widest uppercase">
             3D Printing • Design • Prototyping
           </p>
-          <img 
-            src={Logo} 
+          <img
+            src={Logo}
             alt="MJBLSolutions logo"
             className="w-48 md:w-56"
           />
 
-          
+
 
         </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
 
         {/* Contact */}
 
-       <div className="text-center md:text-left">
+        <div className="text-center md:text-left">
 
           <h4 className="text-white mb-5 text-sm tracking-widest uppercase">
             {t("footer.contact")}
@@ -80,21 +80,21 @@ export default function Footer() {
 
           <div className="text-sm space-y-3">
 
-     <a 
-  href="tel:2364574318"
-  className="block hover:text-cyan-400 transition"
->
-  <span className="mr-2">📞</span>
-  236-457-4318
-</a>
+            <a
+              href="tel:2364574318"
+              className="block hover:text-cyan-400 transition"
+            >
+              <span className="mr-2">📞</span>
+              236-457-4318
+            </a>
 
-<a 
-  href="mailto:mjblsolutions@gmail.com"
-  className="block hover:text-cyan-400 transition"
->
-  <span className="text-cyan-400 mr-2">@</span>
-  mjblsolutions@gmail.com
-</a>
+            <a
+              href="mailto:mjblsolutions@gmail.com"
+              className="block hover:text-cyan-400 transition"
+            >
+              <span className="text-cyan-400 mr-2">@</span>
+              mjblsolutions@gmail.com
+            </a>
 
             <p className="text-neutral-500">
               Quebec, Canada
