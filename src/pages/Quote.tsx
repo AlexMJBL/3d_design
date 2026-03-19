@@ -90,9 +90,9 @@ export default function Quote() {
 
             await emailjs.sendForm(
                 "service_h8mmzxw",
-                "template_tt710tz",
+                "template_tn146wg",
                 form,
-                "YOUR_PUBLIC_KEY"
+                "PDUBMOTXiCgvdsEkb"
             )
 
             form.reset()
@@ -263,7 +263,7 @@ export default function Quote() {
                         <label className="text-sm text-neutral-400 block mb-2">
                             {t("quote.upload")}
                         </label>
-
+                        <input type="hidden" name="file" value={file?.name || ""} />
                         <FileUpload onFileSelect={setFile} />
 
                         {file && (
