@@ -4,6 +4,8 @@ import Logo from "../assets/images/logo_light.png"
 
 export default function Footer() {
 
+  
+
   const { t } = useTranslation()
 
   return (
@@ -78,15 +80,21 @@ export default function Footer() {
 
           <div className="text-sm space-y-3">
 
-            <p>
-              <span className="mr-2">📞</span>
-              236-457-4318
-            </p>
+      <a 
+  href="tel:2364574318"
+  className="hover:text-cyan-400 transition"
+>
+  <span className="mr-2">📞</span>
+  236-457-4318
+</a>
 
-            <p>
-              <span className="text-cyan-400 mr-2">@</span>
-              mjblsolutions@gmail.com
-            </p>
+            <a 
+  href="mailto:mjblsolutions@gmail.com"
+  className="hover:text-cyan-400 transition"
+>
+  <span className="text-cyan-400 mr-2">@</span>
+  mjblsolutions@gmail.com
+</a>
 
             <p className="text-neutral-500">
               Quebec, Canada
