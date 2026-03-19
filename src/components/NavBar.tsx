@@ -25,7 +25,7 @@ export default function Navbar() {
 
 
         {/* CENTER - Logo */}
-        <div className="flex items-center gap-4">
+        <Link to="/" className="flex items-center gap-4">
 
           <img
             src={Logo}
@@ -42,7 +42,7 @@ export default function Navbar() {
             </span>
           </div>
 
-        </div>
+        </Link>
 
 
         {/* CENTER NAV - desktop */}
@@ -116,6 +116,7 @@ export default function Navbar() {
           <Link
             to="/quote"
             className="px-5 py-2 text-sm border border-cyan-500 text-cyan-400 rounded-md hover:bg-cyan-500 hover:text-black transition w-fit"
+            onClick={() => setMenuOpen(false)}
           >
             {t("nav.quote")}
           </Link>
