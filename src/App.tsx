@@ -7,6 +7,7 @@ import Models from "./pages/Models";
 import Services from "./pages/Services";
 import Footer from "./components/Footer";
 import Success from "./pages/Success"
+import Quote from "./pages/Quote";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/models" element={<Models />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/quote" element={<Quote />} />
       <Route path="/success" element={<Success />} />
        <Route path="*" element={<NotFound />} />
     </Routes>

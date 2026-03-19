@@ -40,15 +40,80 @@
     "rights": "Tous droits réservés"
   },
   "contact": {
-  "title": "Contactez-nous",
-  "subtitle": "Une question ou un projet en tête? Envoyez-nous un message.",
-  "name": "Nom",
-  "email": "Courriel",
-  "message": "Message",
-  "send": "Envoyer le message",
-  "info": "Informations de contact",
-  "description": "Nous répondons généralement en moins de 24 heures."
-},
+    "title": "Contactez-nous",
+    "subtitle": "Une question ou un projet en tête? Envoyez-nous un message.",
+    "name": "Nom",
+    "email": "Courriel",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "info": "Informations de contact",
+    "description": "Nous répondons généralement en moins de 24 heures."
+  },
+  "quote": {
+    "title": "Obtenir une soumission",
+    "subtitle": "Téléversez votre fichier 3D ou décrivez votre projet. Nous l’analyserons et vous enverrons une estimation dans les 24 heures.",
+    "projectDetails": "Détails du projet",
+    "name": "Nom",
+    "email": "Courriel",
+    "serviceLabel": "Service", 
+    "dragDrop": "Glissez-déposez votre fichier 3D ici ou cliquez pour téléverser",
+    "dropFile": "Déposez votre fichier ici",
+    "fileFormats": "Formats supportés : STL, 3MF, OBJ, STEP (max 50MB)",
+    "service": {
+      "print": "Impression 3D",
+      "design": "Conception 3D",
+      "both": "Conception + Impression"
+    },
+    "materialLabel": "Matériau",
+    "material": {
+      "unknown": "Je ne sais pas"
+    },
+    "color": "Couleur",
+    "selectColor": "Choisir une couleur",
+    "upload": "Téléverser votre fichier 3D",
+    "quantity": "Quantité",
+    "dimensionsLabel": "Dimensions",
+    "dimensions": "Dimensions approximatives (ex : 120mm x 50mm x 30mm)",
+    "description": "Description du projet",
+    "button": "Demander une soumission",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "trust": {
+      "fastQuote": "Réponse rapide pour les soumissions",
+      "secureUpload": "Téléversement de fichiers sécurisé",
+      "professional": "Impression 3D professionnelle"
+    }
+  },
+  "colors": {
+    "black": "Noir",
+    "grey": "Gris",
+    "white": "Blanc",
+    "beige": "Beige",
+    "brown": "Brun",
+    "purple": "Violet",
+    "teal": "Turquoise",
+    "yellow": "Jaune",
+    "pink": "Rose",
+    "blue": "Bleu",
+    "red": "Rouge",
+    "orange": "Orange",
+    "green": "Vert",
+    "multicolor": "Multicolore",
+    "transparent": "Transparent",
+    "other": "Autre"
+  },
+  "validation": {
+    "nameRequired": "Le nom est requis",
+    "emailRequired": "Le courriel est requis",
+    "emailInvalid": "Adresse courriel invalide",
+    "quantityRequired": "La quantité est requise",
+    "quantityInvalid": "La quantité doit être supérieure à 0",
+    "colorRequired": "Veuillez choisir une couleur",
+    "descriptionRequired": "La description est requise",
+    "descriptionTooShort": "La description doit contenir au moins 10 caractères",
+    "descriptionTooLong": "La description doit contenir moins de 500 caractères",
+    "fileTooLarge": "Le fichier doit être plus petit que 50MB",
+    "fileInvalidType": "Type de fichier non supporté (STL, 3MF, OBJ, STEP)"
+  },
   "notfound": {
     "pageNotFound": "Page introuvable",
     "description": "La page que vous cherchez est introuvable.",

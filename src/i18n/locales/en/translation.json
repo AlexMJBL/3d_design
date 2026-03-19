@@ -28,27 +28,92 @@
       "title": "Rapid Prototyping",
       "desc": "Fast validation of concepts and iterations for your projects."
     },
-    "link" : "View our services"
+    "link": "View our services"
   },
   "featured": {
     "title": "Featured Prints",
     "view": "View All Models"
   },
   "footer": {
-  "navigation": "Navigation",
-  "contact": "Contact",
-  "rights": "All rights reserved"
-},
-"contact": {
-  "title": "Contact Us",
-  "subtitle": "Have a question or a project in mind? Send us a message.",
-  "name": "Name",
-  "email": "Email",
-  "message": "Message",
-  "send": "Send Message",
-  "info": "Contact Information",
-  "description": "We usually respond within 24 hours."
-},
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "All rights reserved"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or a project in mind? Send us a message.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "info": "Contact Information",
+    "description": "We usually respond within 24 hours."
+  },
+  "quote": {
+    "title": "Get a Quote",
+    "subtitle": "Upload your 3D file or describe your project. We will review it and send you a quote within 24 hours.",
+    "projectDetails": "Project details",
+    "name": "Name",
+    "email": "Email",
+    "serviceLabel": "Service",
+    "dragDrop": "Drag & drop your 3D file here or click to upload",
+    "dropFile": "Drop your file here",
+    "fileFormats": "Supported formats: STL, 3MF, OBJ, STEP (max 50MB)",
+    "service": {
+      "print": "3D Printing",
+      "design": "3D Design",
+      "both": "Design + Printing"
+    },
+    "materialLabel": "Material",
+    "material": {
+      "unknown": "Not sure"
+    },
+    "color": "Color",
+    "selectColor": "Select a color",
+    "upload": "Upload your 3D file",
+    "quantity": "Quantity",
+    "dimensionsLabel": "Dimensions",
+    "dimensions": "Approx dimensions (ex: 120mm x 50mm x 30mm)",
+    "description": "Project description",
+    "button": "Request Quote",
+    "error": "Something went wrong. Please try again.",
+    "trust": {
+      "fastQuote": "Fast quote response",
+      "secureUpload": "Secure file upload",
+      "professional": "Professional 3D printing"
+    }
+  },
+  "colors": {
+    "black": "Black",
+    "grey": "Grey",
+    "white": "White",
+    "beige": "Beige",
+    "brown": "Brown",
+    "purple": "Purple",
+    "teal": "Teal",
+    "yellow": "Yellow",
+    "pink": "Pink",
+    "blue": "Blue",
+    "red": "Red",
+    "orange": "Orange",
+    "green": "Green",
+    "multicolor": "Multicolor",
+    "transparent": "Transparent",
+    "other": "Other"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "quantityRequired": "Quantity is required",
+    "quantityInvalid": "Quantity must be greater than 0",
+    "colorRequired": "Please select a color",
+    "descriptionRequired": "Description is required",
+    "descriptionTooShort": "Description must be at least 10 characters",
+    "descriptionTooLong": "Description must be less than 500 characters",
+    "fileTooLarge": "File must be smaller than 50MB",
+    "fileInvalidType": "Unsupported file type (allowed: STL, 3MF, OBJ, STEP)"
+  },
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",
