@@ -55,10 +55,11 @@
     "projectDetails": "Détails du projet",
     "name": "Nom",
     "email": "Courriel",
-    "serviceLabel": "Service", 
+    "serviceLabel": "Service",
     "dragDrop": "Glissez-déposez votre fichier 3D ici ou cliquez pour téléverser",
     "dropFile": "Déposez votre fichier ici",
     "fileFormats": "Formats supportés : STL, 3MF, OBJ, STEP (max 50MB)",
+    "selectMaterial": "Choisir un matériau",
     "service": {
       "print": "Impression 3D",
       "design": "Conception 3D",
@@ -112,7 +113,8 @@
     "descriptionTooShort": "La description doit contenir au moins 10 caractères",
     "descriptionTooLong": "La description doit contenir moins de 500 caractères",
     "fileTooLarge": "Le fichier doit être plus petit que 50MB",
-    "fileInvalidType": "Type de fichier non supporté (STL, 3MF, OBJ, STEP)"
+    "fileInvalidType": "Type de fichier non supporté (STL, 3MF, OBJ, STEP)",
+    "materialRequired": "Veuillez choisir un matériau"
   },
   "notfound": {
     "pageNotFound": "Page introuvable",

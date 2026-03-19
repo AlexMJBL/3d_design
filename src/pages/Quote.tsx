@@ -21,6 +21,8 @@ export default function Quote() {
         const quantity = (form.elements.namedItem("quantity") as HTMLInputElement).value
         const color = (form.elements.namedItem("color") as HTMLSelectElement).value
         const description = (form.elements.namedItem("description") as HTMLTextAreaElement).value.trim()
+        const material = (form.elements.namedItem("material") as HTMLSelectElement).value
+
 
         if (!name) {
             newErrors.name = t("validation.nameRequired")
@@ -67,6 +69,10 @@ export default function Quote() {
                 newErrors.file = t("validation.fileInvalidType")
             }
 
+        }
+
+        if (!material) {
+            newErrors.material = t("validation.materialRequired")
         }
 
         return newErrors
@@ -195,7 +201,10 @@ export default function Quote() {
                     {/* MATERIAL */}
                     <div>
 
-                        <label htmlFor="material" className="text-sm text-neutral-400 block mb-1">
+                        <label
+                            htmlFor="material"
+                            className="text-sm text-neutral-400 block mb-1"
+                        >
                             {t("quote.materialLabel")}
                         </label>
 
@@ -204,14 +213,26 @@ export default function Quote() {
                             name="material"
                             className="w-full p-3 bg-neutral-900 border border-neutral-800 rounded focus:border-cyan-500"
                         >
+
+                            <option value="" disabled selected>
+                                {t("quote.selectMaterial")}
+                            </option>
+
                             <option>PLA</option>
                             <option>PETG</option>
                             <option>TPU</option>
                             <option>ABS</option>
                             <option>ASA</option>
                             <option>Nylon</option>
+
                             <option>{t("quote.material.unknown")}</option>
+
                         </select>
+                        {errors.material && (
+                            <p className="text-red-400 text-sm mt-1">
+                                {errors.material}
+                            </p>
+                        )}
 
                     </div>
 
@@ -228,7 +249,7 @@ export default function Quote() {
                             className="w-full p-3 bg-neutral-900 border border-neutral-800 rounded focus:border-cyan-500"
                         >
 
-                            <option value="">
+                            <option value="" disabled selected>
                                 {t("quote.selectColor")}
                             </option>
 
