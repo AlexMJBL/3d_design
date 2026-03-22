@@ -116,9 +116,19 @@
     "fileInvalidType": "Unsupported file type (allowed: STL, 3MF, OBJ, STEP)",
     "materialRequired": "Please select a material"
   },
+  
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",
     "home": "Return Home"
+  },
+   "title": {
+    "home": "Accueil | MJBL Solutions",
+    "contact": "Contact | MJBL Solutions",
+    "models": "Modèles | MJBL Solutions",
+    "notFound": "Page introuvable | MJBL Solutions",
+    "quote": "Devis | MJBL Solutions",
+    "services": "Services | MJBL Solutions",
+    "success": "Message envoyé | MJBL Solutions"
   }
 }

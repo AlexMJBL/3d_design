@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PageTitle from "../components/PageTitle";
 
 export default function NotFound() {
 
@@ -7,6 +8,7 @@ export default function NotFound() {
 
   return (
     <div className="relative flex items-center justify-center h-screen bg-neutral-950 text-neutral-200 overflow-hidden">
+      <PageTitle titleKey="title.notFound" />
 
       {/* Grid background */}
       <div

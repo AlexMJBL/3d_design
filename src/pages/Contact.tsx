@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import emailjs from "@emailjs/browser"
+import PageTitle from "../components/PageTitle"
 
 export default function Contact() {
 
@@ -35,7 +36,7 @@ export default function Contact() {
   return (
 
     <section className="relative bg-neutral-950 text-neutral-200 py-24 px-6 overflow-hidden">
-
+      <PageTitle titleKey="title.contact" />
       <div
         className="absolute inset-0 opacity-[0.05]
         bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]

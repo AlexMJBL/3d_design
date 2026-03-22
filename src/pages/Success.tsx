@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import PageTitle from "../components/PageTitle"
 
 export default function Success() {
 
   return (
 
     <section className="min-h-screen flex items-center justify-center bg-neutral-950 text-neutral-200 px-6">
+      <PageTitle titleKey="title.success" />
 
       <div className="text-center space-y-6">
 

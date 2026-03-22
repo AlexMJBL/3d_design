@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
 import FileUpload from "../components/FileUpload"
+import PageTitle from "../components/PageTitle"
 
 export default function Quote() {
 
@@ -117,6 +118,7 @@ export default function Quote() {
     return (
 
         <section className="bg-neutral-950 text-neutral-200 py-24 px-6">
+            <PageTitle titleKey="title.quote" />
 
             <div className="max-w-4xl mx-auto bg-neutral-900 border border-neutral-800 rounded-xl p-10 shadow-xl">
 
