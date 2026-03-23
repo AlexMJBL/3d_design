@@ -1,7 +1,10 @@
 import { useEffect } from "react"
 import { useTranslation } from "react-i18next"
 
-export default function PageTitle({ titleKey }) {
+type Props = {
+  titleKey: string
+}
+export default function PageTitle({ titleKey } : Props) {
   const { t, i18n } = useTranslation()
 
   useEffect(() => {
