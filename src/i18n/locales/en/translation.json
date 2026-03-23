@@ -116,19 +116,54 @@
     "fileInvalidType": "Unsupported file type (allowed: STL, 3MF, OBJ, STEP)",
     "materialRequired": "Please select a material"
   },
-  
+  "about": {
+    "title": "About",
+    "intro": "At MJBL Solutions, we specialize in complete solutions from design to manufacturing. We support our clients at every stage of their project, from the initial idea to the final product.",
+    "intro2": "We offer 3D modeling, 3D printing, prototyping, automation and programming services to create custom solutions tailored to each client's needs.",
+    "local": "All our products are designed and manufactured locally in Quebec City. We focus on quality, communication and fast project turnaround.",
+    "servicesTitle": "Our Services",
+    "services": {
+      "design": "3D Design and Modeling",
+      "printing": "3D Printing",
+      "prototype": "Rapid Prototyping",
+      "custom": "Custom Parts Manufacturing",
+      "repair": "Plastic Parts Repair",
+      "automation": "Automation",
+      "programming": "Programming"
+    },
+    "materialsTitle": "Materials",
+    "materials": {
+      "pla": "PLA – Prototypes and decorative parts",
+      "petg": "PETG – Durable and outdoor parts",
+      "abs": "ABS – Mechanical and heat-resistant parts",
+      "tpu": "TPU – Flexible parts",
+       "nylon": "Nylon – Strong mechanical parts"
+    },
+    "whyTitle": "Why Choose MJBL Solutions",
+    "why": {
+      "custom": "Personalized service",
+      "solutions": "Custom solutions",
+      "fast": "Fast turnaround",
+      "price": "Competitive pricing",
+      "local": "Local service in Quebec City",
+      "allinone": "Design and manufacturing in one place",
+      "support": "Technical support throughout the project"
+    },
+    "cta": "Do you have a project, an idea, or a problem to solve? Contact us or request a quote and we will help you find the best solution for your project.",
+    "button": "Request a quote"
+  },
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",
     "home": "Return Home"
   },
-   "title": {
-    "home": "Accueil | MJBL Solutions",
+  "title": {
+    "home": "Home | MJBL Solutions",
     "contact": "Contact | MJBL Solutions",
-    "models": "Modèles | MJBL Solutions",
-    "notFound": "Page introuvable | MJBL Solutions",
-    "quote": "Devis | MJBL Solutions",
+    "models": "Models | MJBL Solutions",
+    "notFound": "Page Not Found | MJBL Solutions",
+    "quote": "Quote | MJBL Solutions",
     "services": "Services | MJBL Solutions",
-    "success": "Message envoyé | MJBL Solutions"
+    "success": "Message Sent | MJBL Solutions"
   }
 }

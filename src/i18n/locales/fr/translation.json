@@ -116,18 +116,54 @@
     "fileInvalidType": "Type de fichier non supporté (STL, 3MF, OBJ, STEP)",
     "materialRequired": "Veuillez choisir un matériau"
   },
+  "about": {
+    "title": "À propos",
+    "intro": "Chez MJBL Solutions, nous sommes spécialisés dans les solutions complètes allant de la conception à la fabrication. Nous accompagnons nos clients à chaque étape de leur projet, de l’idée initiale jusqu’au produit final.",
+    "intro2": "Nous offrons des services de modélisation 3D, d’impression 3D, de prototypage, d’automatisation et de programmation afin de créer des solutions sur mesure adaptées aux besoins de chaque client.",
+    "local": "Tous nos produits sont conçus et fabriqués localement dans la ville de Québec. Nous mettons l’accent sur la qualité, la communication avec le client et la rapidité d’exécution des projets.",
+    "servicesTitle": "Nos services",
+    "services": {
+      "design": "Conception et modélisation 3D",
+      "printing": "Impression 3D",
+      "prototype": "Prototypage rapide",
+      "custom": "Fabrication de pièces sur mesure",
+      "repair": "Réparation de pièces plastiques",
+      "automation": "Automatisation",
+      "programming": "Programmation"
+    },
+    "materialsTitle": "Matériaux",
+    "materials": {
+      "pla": "PLA – Prototypes et pièces décoratives",
+      "petg": "PETG – Pièces résistantes et usage extérieur",
+      "abs": "ABS – Pièces mécaniques et résistantes à la chaleur",
+      "tpu": "TPU – Pièces flexibles",
+        "nylon": "Nylon – Pièces très résistantes et mécaniques"
+    },
+    "whyTitle": "Pourquoi choisir MJBL Solutions",
+    "why": {
+      "custom": "Service personnalisé",
+      "solutions": "Solutions sur mesure",
+      "fast": "Délais rapides",
+      "price": "Prix compétitifs",
+      "local": "Service local à Québec",
+      "allinone": "Conception et fabrication au même endroit",
+      "support": "Support technique tout au long du projet"
+    },
+    "cta": "Vous avez un projet, une idée ou un problème à résoudre ? Contactez-nous ou faites une demande de devis et nous vous aiderons à trouver la meilleure solution pour votre projet.",
+    "button": "Demander un devis"
+  },
   "notfound": {
     "pageNotFound": "Page introuvable",
     "description": "La page que vous cherchez est introuvable.",
     "home": "Retour à l'accueil"
   },
-   "title": {
-    "home": "Home | MJBL Solutions",
+  "title": {
+    "home": "Accueil | MJBL Solutions",
     "contact": "Contact | MJBL Solutions",
-    "models": "Models | MJBL Solutions",
-    "notFound": "Page Not Found | MJBL Solutions",
-    "quote": "Quote | MJBL Solutions",
+    "models": "Modèles | MJBL Solutions",
+    "notFound": "Page introuvable | MJBL Solutions",
+    "quote": "Devis | MJBL Solutions",
     "services": "Services | MJBL Solutions",
-    "success": "Message Sent | MJBL Solutions"
+    "success": "Message envoyé | MJBL Solutions"
   }
 }
