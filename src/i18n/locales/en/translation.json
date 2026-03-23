@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "models": "Models",
-    "services": "Services",
+    "services": "About",
     "contact": "Contact",
     "quote": "Get a Quote",
     "conception": "AND CONCEPTION",
@@ -152,6 +152,23 @@
     "cta": "Do you have a project, an idea, or a problem to solve? Contact us or request a quote and we will help you find the best solution for your project.",
     "button": "Request a quote"
   },
+  "models": {
+    "title": "Model Gallery",
+    "subtitle": "Examples of 3D design and printing made locally in Quebec.",
+
+    "categories": {
+      "pots": "Plant pots",
+      "plantAccessories": "Plant accessories",
+      "fun": "Entertainment",
+      "sport": "Sport & outdoor accessories",
+      "functional": "Functional parts",
+      "automotive": "Automotive parts"
+    },
+
+    "material": "Material",
+    "quote": "Request a quote",
+    "close": "Close"
+  },
   "notfound": {
     "pageNotFound": "Page not found",
     "description": "The page you are looking for cannot be found.",
@@ -163,7 +180,7 @@
     "models": "Models | MJBL Solutions",
     "notFound": "Page Not Found | MJBL Solutions",
     "quote": "Quote | MJBL Solutions",
-    "services": "Services | MJBL Solutions",
+    "services": "About | MJBL Solutions",
     "success": "Message Sent | MJBL Solutions"
   }
 }
