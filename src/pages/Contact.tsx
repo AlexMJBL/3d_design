@@ -9,44 +9,36 @@ export default function Contact() {
   const navigate = useNavigate()
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-
     e.preventDefault()
-
     const form = e.currentTarget
 
     try {
-
       await emailjs.sendForm(
         "service_h8mmzxw",
         "template_tt710tz",
         form,
         "PDUBMOTXiCgvdsEkb"
       )
-
       navigate("/success")
-
     } catch (error) {
-
       console.error("Email error:", error)
       alert("Erreur lors de l'envoi du message.")
-
     }
   }
 
   return (
-
     <section className="relative bg-neutral-950 text-neutral-200 py-24 px-6 overflow-hidden">
       <PageTitle titleKey="title.contact" />
-      <div
-        className="absolute inset-0 opacity-[0.05]
-        bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]
-        bg-[size:80px_80px]"
-      />
+
+      {/* Cyan glow */}
+      <div className="absolute right-[-200px] top-1/3 w-[500px] h-[500px] bg-cyan-500 opacity-10 blur-[140px] rounded-full"></div>
+
+      {/* Vertical design line */}
+      <div className="absolute left-1/2 top-0 h-full w-px bg-neutral-800 opacity-40"></div>
 
       <div className="relative max-w-6xl mx-auto">
 
         <div className="text-center mb-16">
-
           <h1 className="text-4xl md:text-5xl font-light text-white tracking-wide">
             {t("contact.title")}
           </h1>
@@ -54,28 +46,23 @@ export default function Contact() {
           <p className="mt-4 text-neutral-400 max-w-xl mx-auto">
             {t("contact.subtitle")}
           </p>
-
         </div>
 
         <div className="grid md:grid-cols-2 gap-14">
 
           {/* FORM */}
-
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6">
 
             <div>
               <label className="text-sm text-neutral-400">
                 {t("contact.name")}
               </label>
-
               <input
                 type="text"
                 name="name"
                 required
-                className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md focus:border-cyan-500 outline-none"
+                className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md 
+                focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition"
               />
             </div>
 
@@ -83,12 +70,12 @@ export default function Contact() {
               <label className="text-sm text-neutral-400">
                 {t("contact.email")}
               </label>
-
               <input
                 type="email"
                 name="email"
                 required
-                className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md focus:border-cyan-500 outline-none"
+                className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md 
+                focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition"
               />
             </div>
 
@@ -96,26 +83,19 @@ export default function Contact() {
               <label className="text-sm text-neutral-400">
                 {t("contact.message")}
               </label>
-
               <textarea
                 name="message"
                 rows={5}
                 required
-                className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md focus:border-cyan-500 outline-none"
+                className="w-full mt-2 p-3 bg-neutral-900 border border-neutral-800 rounded-md 
+                focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition"
               />
             </div>
 
             <button
               type="submit"
-              className="
-              px-8 py-3
-              border border-cyan-500
-              text-cyan-400
-              rounded-md
-              hover:bg-cyan-500
-              hover:text-black
-              transition
-              "
+              className="px-8 py-3 bg-black text-cyan-400 border border-cyan-500 rounded-md
+              hover:bg-cyan-500 hover:text-black transition duration-300"
             >
               {t("contact.send")}
             </button>
@@ -123,9 +103,7 @@ export default function Contact() {
           </form>
 
           {/* CONTACT INFO */}
-
           <div className="space-y-6">
-
             <h3 className="text-xl text-white tracking-wide">
               {t("contact.info")}
             </h3>
@@ -135,7 +113,6 @@ export default function Contact() {
             </p>
 
             <div className="space-y-4 text-neutral-300">
-
               <p>
                 <span className="mr-2">📞</span>
                 236-457-4318
@@ -149,15 +126,11 @@ export default function Contact() {
               <p className="text-neutral-500">
                 Quebec, Canada
               </p>
-
             </div>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
   )
 }

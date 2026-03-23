@@ -3,16 +3,18 @@ import { useTranslation } from "react-i18next";
 import PageTitle from "../components/PageTitle";
 
 export default function NotFound() {
-
   const { t } = useTranslation();
 
   return (
     <div className="relative flex items-center justify-center h-screen bg-neutral-950 text-neutral-200 overflow-hidden">
       <PageTitle titleKey="title.notFound" />
 
+      {/* Cyan glow */}
+      <div className="absolute w-[500px] h-[500px] bg-cyan-500 opacity-10 blur-[120px] rounded-full"></div>
+
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-[0.08]
+        className="absolute inset-0 opacity-[0.06]
         bg-[linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]
         bg-[size:80px_80px]"
       />
@@ -26,7 +28,8 @@ export default function NotFound() {
           404
         </h1>
 
-        <div className="w-24 h-[1px] bg-neutral-700 mx-auto my-6"></div>
+        {/* Cyan line */}
+        <div className="w-24 h-[2px] bg-cyan-500 mx-auto my-6"></div>
 
         <h2 className="text-xl text-neutral-300">
           {t("notfound.pageNotFound")}
@@ -38,8 +41,8 @@ export default function NotFound() {
 
         <Link
           to="/"
-          className="inline-block mt-10 px-7 py-3 border border-neutral-700 rounded-sm
-          hover:border-neutral-400 hover:text-white transition duration-300"
+          className="inline-block mt-10 px-7 py-3 bg-black text-cyan-500 border border-cyan-500 rounded-sm
+          hover:bg-cyan-500 hover:text-black transition duration-300"
         >
           {t("notfound.home")}
         </Link>
