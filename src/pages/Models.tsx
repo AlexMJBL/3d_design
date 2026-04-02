@@ -1,8 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import PageTitle from "../components/PageTitle"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
-import { useEffect } from "react"
 
 type Model = {
     name: string
@@ -12,6 +11,7 @@ type Model = {
 }
 
 type Category = {
+    slug: string
     name: string
     models: Model[]
 }
@@ -19,91 +19,92 @@ type Category = {
 export default function Models() {
     const { t } = useTranslation()
     const [selectedModel, setSelectedModel] = useState<Model | null>(null)
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+    const [categoryOverflow, setCategoryOverflow] = useState<boolean[]>([])
+    const sliderRefs = useRef<(HTMLDivElement | null)[]>([])
+
+    const scrollCategory = (index: number, direction: "left" | "right") => {
+        const element = sliderRefs.current[index]
+        if (!element) return
+
+        const scrollAmount = element.clientWidth * 0.8
+        const target = direction === "left" ? element.scrollLeft - scrollAmount : element.scrollLeft + scrollAmount
+
+        element.scrollTo({ left: target, behavior: "smooth" })
+    }
+
+    const imageModules = import.meta.glob("../assets/images/Print_photo/**/*.{jpg,jpeg,png}", {
+        eager: true,
+        as: "url"
+    }) as Record<string, string>
+
+    const categories = Object.entries(imageModules).reduce((acc, [path, url]) => {
+        const parts = path.split("/")
+        const folderName = parts[parts.length - 2]
+        const fileName = parts[parts.length - 1]
+
+        const slug = folderName
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^a-z0-9-]/g, "")
+
+        let category = acc.find((item) => item.slug === slug)
+        if (!category) {
+            const translatedLabel = t(`models.categories.${slug}`)
+            category = {
+                slug,
+                name: translatedLabel !== `models.categories.${slug}` ? translatedLabel : folderName,
+                models: []
+            }
+            acc.push(category)
+        }
+
+        const baseName = fileName.replace(/\.(jpg|jpeg|png)$/i, "")
+        const normalizedBase = baseName.replace(/(?:[_-]\d+)+$/, "")
+        let modelName = normalizedBase.replace(/[-_]/g, " ").trim()
+
+        if (/black\s+white\s+pot/i.test(modelName)) {
+            modelName = "Black and White Pot"
+        } else if (/monstera\s+lid/i.test(modelName)) {
+            modelName = "Monstera Lid"
+        } else if (/honeycomb\s+lid/i.test(modelName)) {
+            modelName = "Honeycomb Lid"
+        }
+
+        modelName = modelName
+            .split(/\s+/)
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ")
+
+        const existingModel = category!.models.find((m) => m.name === modelName)
+        if (existingModel) {
+            existingModel.images.push(url)
+        } else {
+            category!.models.push({
+                name: modelName,
+                material: "N/A",
+                description: "",
+                images: [url]
+            })
+        }
+
+        return acc
+    }, [] as Category[])
 
     useEffect(() => {
-        const handleEsc = (e: KeyboardEvent) => {
-            if (e.key === "Escape") setSelectedModel(null)
+        const updateOverflow = () => {
+            const overflowStates = categories.map((_, idx) => {
+                const el = sliderRefs.current[idx]
+                return !!el && el.scrollWidth > el.clientWidth + 1
+            })
+            setCategoryOverflow(overflowStates)
         }
 
-        window.addEventListener("keydown", handleEsc)
-        return () => window.removeEventListener("keydown", handleEsc)
-    }, [])
-
-
-    const categories: Category[] = [
-        {
-            name: "Pot à plante",
-            models: [
-                {
-                    name: "Pot Hexagonal",
-                    material: "PLA",
-                    description: "Pot à plante design imprimé en 3D.",
-                    images: ["/models/pots/pot1.jpg", "/models/pots/pot1-2.jpg"]
-                },
-                {
-                    name: "Pot Moderne",
-                    material: "PETG",
-                    description: "Pot moderne résistant à l'humidité.",
-                    images: ["/models/pots/pot2.jpg"]
-                }
-            ]
-        },
-        {
-            name: "Accessoire à plante",
-            models: [
-                {
-                    name: "Support à plante",
-                    material: "PLA",
-                    description: "Support décoratif pour plante.",
-                    images: ["/models/plantes/plant1.jpg"]
-                }
-            ]
-        },
-        {
-            name: "Divertissement",
-            models: [
-                {
-                    name: "Figurine",
-                    material: "PLA",
-                    description: "Figurine imprimée en 3D.",
-                    images: ["/models/fun/fun1.jpg"]
-                }
-            ]
-        },
-        {
-            name: "Accessoire sport / plein air",
-            models: [
-                {
-                    name: "Support GoPro",
-                    material: "PETG",
-                    description: "Support résistant pour caméra sport.",
-                    images: ["/models/sport/sport1.jpg"]
-                }
-            ]
-        },
-        {
-            name: "Pièce fonctionnelle",
-            models: [
-                {
-                    name: "Support mural",
-                    material: "ABS",
-                    description: "Pièce fonctionnelle robuste.",
-                    images: ["/models/fonctionnel/fonc1.jpg"]
-                }
-            ]
-        },
-        {
-            name: "Pièce automotive",
-            models: [
-                {
-                    name: "Clip automobile",
-                    material: "Nylon",
-                    description: "Clip de remplacement automobile.",
-                    images: ["/models/auto/auto1.jpg"]
-                }
-            ]
-        }
-    ]
+        updateOverflow()
+        window.addEventListener("resize", updateOverflow)
+        return () => window.removeEventListener("resize", updateOverflow)
+    }, [categories])
 
     return (
         <section className="relative bg-neutral-950 text-neutral-200 py-24 px-6 overflow-hidden">
@@ -132,20 +133,48 @@ export default function Models() {
                             {category.name}
                         </h2>
 
-                        {/* Slider */}
-                        <div className="flex gap-6 overflow-x-auto pb-4">
-                            {category.models.map((model, i) => (
-                                <div
-                                    key={i}
-                                    onClick={() => setSelectedModel(model)}
-                                    className="min-w-[250px] cursor-pointer border border-neutral-800 bg-neutral-900 rounded-md overflow-hidden
-                  hover:border-cyan-500 transition"
+                        {/* Carousel with prev/next arrow controls */}
+                        <div className="relative">
+                            {categoryOverflow[index] && (
+                                <button
+                                    onClick={() => scrollCategory(index, "left")}
+                                    className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white hover:bg-black"
+                                    aria-label="Scroll left"
                                 >
-                                    <img
-                                        src={model.images[0]}
-                                        alt={model.name}
-                                        className="w-full h-48 object-cover"
-                                    />
+                                    ‹
+                                </button>
+                            )}
+
+                            {categoryOverflow[index] && (
+                                <button
+                                    onClick={() => scrollCategory(index, "right")}
+                                    className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white hover:bg-black"
+                                    aria-label="Scroll right"
+                                >
+                                    ›
+                                </button>
+                            )}
+
+                            <div
+                                ref={(el) => { sliderRefs.current[index] = el }}
+                                className="flex gap-6 overflow-x-hidden pb-4 scroll-smooth pr-10"
+                            >
+                                {category.models.map((model, i) => (
+                                    <div
+                                        key={i}
+                                        onClick={() => {
+                                            setSelectedModel(model)
+                                            setSelectedImageIndex(0)
+                                        }}
+                                        className="min-w-[250px] cursor-pointer border border-neutral-800 bg-neutral-900 rounded-md overflow-hidden hover:border-cyan-500 transition"
+                                    >
+                                    <div className="w-full h-48 bg-neutral-800 flex items-center justify-center overflow-hidden">
+                                        <img
+                                            src={model.images[0]}
+                                            alt={model.name}
+                                            className="max-w-full max-h-full object-contain"
+                                        />
+                                    </div>
 
                                     <div className="p-4">
                                         <h3 className="text-white">{model.name}</h3>
@@ -157,6 +186,7 @@ export default function Models() {
                             ))}
                         </div>
                     </div>
+                </div>
                 ))}
 
                 {/* Modal */}
@@ -183,17 +213,50 @@ export default function Models() {
                                 {selectedModel.description}
                             </p>
 
-                            {/* Images */}
-                            <div className="grid grid-cols-2 gap-4">
-                                {selectedModel.images.map((img, index) => (
-                                    <img
-                                        key={index}
-                                        src={img}
-                                        alt={selectedModel.name}
-                                        className="w-full h-40 object-cover rounded"
-                                    />
-                                ))}
+                            {/* Image carousel */}
+                            <div className="relative h-72 md:h-96 bg-neutral-900 flex items-center justify-center rounded overflow-hidden">
+                                {selectedModel.images.length > 1 && (
+                                    <>
+                                        <button
+                                            onClick={() => setSelectedImageIndex((prev) => (prev - 1 + selectedModel.images.length) % selectedModel.images.length)}
+                                            className="absolute left-3 h-10 w-10 rounded-full bg-black/60 text-white hover:bg-black/80"
+                                            aria-label="Previous image"
+                                        >
+                                            ‹
+                                        </button>
+                                        <button
+                                            onClick={() => setSelectedImageIndex((prev) => (prev + 1) % selectedModel.images.length)}
+                                            className="absolute right-3 h-10 w-10 rounded-full bg-black/60 text-white hover:bg-black/80"
+                                            aria-label="Next image"
+                                        >
+                                            ›
+                                        </button>
+                                    </>
+                                )}
+                                <img
+                                    src={selectedModel.images[selectedImageIndex]}
+                                    alt={`${selectedModel.name} ${selectedImageIndex + 1}`}
+                                    className="max-w-full max-h-full object-contain"
+                                />
                             </div>
+
+                            {selectedModel.images.length > 1 && (
+                                <div className="mt-4 flex justify-center gap-2">
+                                    {selectedModel.images.map((img, i) => (
+                                        <button
+                                            key={i}
+                                            onClick={() => setSelectedImageIndex(i)}
+                                            className={`h-12 w-12 rounded border ${selectedImageIndex === i ? "border-cyan-400" : "border-neutral-700"} overflow-hidden`}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`${selectedModel.name} ${i + 1}`}
+                                                className="h-full w-full object-cover"
+                                            />
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
 
                             {/* Quote button */}
                             <Link

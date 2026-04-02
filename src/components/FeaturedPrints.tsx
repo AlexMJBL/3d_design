@@ -1,31 +1,31 @@
 import { useTranslation } from "react-i18next"
-import Tetris from "../assets/images/Print_photo/Tetris/tetris_fond_blanc_2.png"
-import PhoneStand from "../assets/images/Print_photo/Utility/phone_stand_1.jpg"
-import Vase from "../assets/images/Print_photo/Decorative/vase_tulip_2.jpg"
-import PropagationLid from "../assets/images/Print_photo/Plant Product/monstera_lid_1.jpg"
 import { Link } from "react-router-dom"
 
 export default function FeaturedPrints() {
 
   const { t } = useTranslation()
 
+  const imageModules = import.meta.glob("../assets/images/Print_photo/**/*.{jpg,png}", {
+    eager: true,
+    as: "url"
+  }) as Record<string, string>
+
   const prints = [
     {
       nameKey: "featured.items.tetris",
-      img: Tetris
-      
+      img: imageModules["../assets/images/Print_photo/Tetris/tetris_fond_blanc_2.png"]
     },
     {
       nameKey: "featured.items.phoneStand",
-      img: PhoneStand
+      img: imageModules["../assets/images/Print_photo/Utility/phone_stand_1.jpg"]
     },
     {
       nameKey: "featured.items.propagationLid",
-      img: PropagationLid
+      img: imageModules["../assets/images/Print_photo/Plant Product/monstera_lid_1.jpg"]
     },
     {
       nameKey: "featured.items.tulipVase",
-      img: Vase
+      img: imageModules["../assets/images/Print_photo/Decorative/vase_tulip_2.jpg"]
     }
   ]
 
@@ -66,7 +66,7 @@ export default function FeaturedPrints() {
 
                 <img
                   src={print.img}
-                  alt={print.nameKey}
+                  alt={t(print.nameKey)}
                   loading="lazy"
                   className="
                   w-full
