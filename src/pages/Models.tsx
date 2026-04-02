@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useMemo } from "react"
 import PageTitle from "../components/PageTitle"
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 type Model = {
     name: string
@@ -18,6 +18,7 @@ type Category = {
 
 export default function Models() {
     const { t } = useTranslation()
+    const location = useLocation()
     const [selectedModel, setSelectedModel] = useState<Model | null>(null)
     const [selectedImageIndex, setSelectedImageIndex] = useState(0)
     const [categoryOverflow, setCategoryOverflow] = useState<boolean[]>([])
@@ -38,59 +39,61 @@ export default function Models() {
         as: "url"
     }) as Record<string, string>
 
-    const categories = Object.entries(imageModules).reduce((acc, [path, url]) => {
-        const parts = path.split("/")
-        const folderName = parts[parts.length - 2]
-        const fileName = parts[parts.length - 1]
+    const categories = useMemo(() => {
+        return Object.entries(imageModules).reduce((acc, [path, url]) => {
+            const parts = path.split("/")
+            const folderName = parts[parts.length - 2]
+            const fileName = parts[parts.length - 1]
 
-        const slug = folderName
-            .toLowerCase()
-            .replace(/\s+/g, "-")
-            .replace(/[^a-z0-9-]/g, "")
+            const slug = folderName
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .replace(/[^a-z0-9-]/g, "")
 
-        let category = acc.find((item) => item.slug === slug)
-        if (!category) {
-            const translatedLabel = t(`models.categories.${slug}`)
-            category = {
-                slug,
-                name: translatedLabel !== `models.categories.${slug}` ? translatedLabel : folderName,
-                models: []
+            let category = acc.find((item) => item.slug === slug)
+            if (!category) {
+                const translatedLabel = t(`models.categories.${slug}`)
+                category = {
+                    slug,
+                    name: translatedLabel !== `models.categories.${slug}` ? translatedLabel : folderName,
+                    models: []
+                }
+                acc.push(category)
             }
-            acc.push(category)
-        }
 
-        const baseName = fileName.replace(/\.(jpg|jpeg|png)$/i, "")
-        const normalizedBase = baseName.replace(/(?:[_-]\d+)+$/, "")
-        let modelName = normalizedBase.replace(/[-_]/g, " ").trim()
+            const baseName = fileName.replace(/\.(jpg|jpeg|png)$/i, "")
+            const normalizedBase = baseName.replace(/(?:[_-]\d+)+$/, "")
+            let modelName = normalizedBase.replace(/[-_]/g, " ").trim()
 
-        if (/black\s+white\s+pot/i.test(modelName)) {
-            modelName = "Black and White Pot"
-        } else if (/monstera\s+lid/i.test(modelName)) {
-            modelName = "Monstera Lid"
-        } else if (/honeycomb\s+lid/i.test(modelName)) {
-            modelName = "Honeycomb Lid"
-        }
+            if (/black\s+white\s+pot/i.test(modelName)) {
+                modelName = "Black and White Pot"
+            } else if (/monstera\s+lid/i.test(modelName)) {
+                modelName = "Monstera Lid"
+            } else if (/honeycomb\s+lid/i.test(modelName)) {
+                modelName = "Honeycomb Lid"
+            }
 
-        modelName = modelName
-            .split(/\s+/)
-            .filter(Boolean)
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ")
+            modelName = modelName
+                .split(/\s+/)
+                .filter(Boolean)
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ")
 
-        const existingModel = category!.models.find((m) => m.name === modelName)
-        if (existingModel) {
-            existingModel.images.push(url)
-        } else {
-            category!.models.push({
-                name: modelName,
-                material: "N/A",
-                description: "",
-                images: [url]
-            })
-        }
+            const existingModel = category!.models.find((m) => m.name === modelName)
+            if (existingModel) {
+                existingModel.images.push(url)
+            } else {
+                category!.models.push({
+                    name: modelName,
+                    material: "N/A",
+                    description: "",
+                    images: [url]
+                })
+            }
 
-        return acc
-    }, [] as Category[])
+            return acc
+        }, [] as Category[])
+    }, [t])
 
     useEffect(() => {
         const updateOverflow = () => {
@@ -105,6 +108,24 @@ export default function Models() {
         window.addEventListener("resize", updateOverflow)
         return () => window.removeEventListener("resize", updateOverflow)
     }, [categories])
+
+    // Close modal when navigating away
+    useEffect(() => {
+        const handleNavigation = () => {
+            setSelectedModel(null)
+            setSelectedImageIndex(0)
+        }
+
+        // Listen for navigation events
+        window.addEventListener('beforeunload', handleNavigation)
+        return () => window.removeEventListener('beforeunload', handleNavigation)
+    }, [])
+
+    // Close modal when route changes
+    useEffect(() => {
+        setSelectedModel(null)
+        setSelectedImageIndex(0)
+    }, [location.pathname])
 
     return (
         <section className="relative bg-neutral-950 text-neutral-200 py-24 px-6 overflow-hidden">
@@ -191,8 +212,14 @@ export default function Models() {
 
                 {/* Modal */}
                 {selectedModel && (
-                    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-                        <div className="bg-neutral-900 border border-neutral-700 rounded-md max-w-3xl w-full p-6 relative">
+                    <div
+                        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                        onClick={() => setSelectedModel(null)}
+                    >
+                        <div
+                            className="bg-neutral-900 border border-neutral-700 rounded-md max-w-3xl w-full p-6 relative"
+                            onClick={(e) => e.stopPropagation()}
+                        >
 
                             <button
                                 onClick={() => setSelectedModel(null)}

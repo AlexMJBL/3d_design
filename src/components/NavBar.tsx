@@ -58,7 +58,7 @@ export default function Navbar() {
           </NavLink>
 
           <NavLink
-            to="/Models"
+            to="/models"
             className={({ isActive }) =>
               `nav-link ${isActive ? "nav-link-active text-white" : "text-neutral-400 hover:text-white"}`
             }

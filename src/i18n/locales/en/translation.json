@@ -168,7 +168,14 @@
       "fun": "Entertainment",
       "sport": "Sport & outdoor accessories",
       "functional": "Functional parts",
-      "automotive": "Automotive parts"
+      "automotive": "Automotive parts",
+      "decorative": "Decorative",
+      "fidget": "Fidget",
+      "plant-pot": "Plant Pot",
+      "plant-product": "Plant Product",
+      "small-decoration": "Small Decoration",
+      "tetris": "Tetris",
+      "utility": "Utility"
     },
 
     "material": "Material",
