@@ -32,7 +32,13 @@
   },
   "featured": {
     "title": "Featured Prints",
-    "view": "View All Models"
+    "view": "View All Models",
+    "items": {
+      "tetris": "Tetris Puzzle",
+      "phoneStand": "Phone Stand",
+      "propagationLid": "Monstera Propagation Lid",
+      "tulipVase": "Tulip Vase"
+    }
   },
   "footer": {
     "navigation": "Navigation",

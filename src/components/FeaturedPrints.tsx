@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next"
-import Gear from "../assets/images/gear_print.png"
-import PhoneStand from "../assets/images/phone_stand.png"
-import Vase from "../assets/images/vase.png"
-import EngineerPart from "../assets/images/engineer_part.png"
+import Tetris from "../assets/images/Print_photo/Tetris/tetris_fond_blanc_2.png"
+import PhoneStand from "../assets/images/Print_photo/Utility/phone_stand_1.jpg"
+import Vase from "../assets/images/Print_photo/Decorative/vase_tulip_2.jpg"
+import PropagationLid from "../assets/images/Print_photo/Plant Product/monstera_lid_1.jpg"
 import { Link } from "react-router-dom"
 
 export default function FeaturedPrints() {
@@ -11,19 +11,20 @@ export default function FeaturedPrints() {
 
   const prints = [
     {
-      name: "Gear Assembly",
-      img: Gear
+      nameKey: "featured.items.tetris",
+      img: Tetris
+      
     },
     {
-      name: "Phone Stand",
+      nameKey: "featured.items.phoneStand",
       img: PhoneStand
     },
     {
-      name: "Mechanical Part",
-      img: EngineerPart
+      nameKey: "featured.items.propagationLid",
+      img: PropagationLid
     },
     {
-      name: "Decorative Vase",
+      nameKey: "featured.items.tulipVase",
       img: Vase
     }
   ]
@@ -65,7 +66,7 @@ export default function FeaturedPrints() {
 
                 <img
                   src={print.img}
-                  alt={print.name}
+                  alt={print.nameKey}
                   loading="lazy"
                   className="
                   w-full
@@ -85,7 +86,7 @@ export default function FeaturedPrints() {
               <div className="p-4">
 
                 <h3 className="text-sm text-neutral-300 tracking-wide">
-                  {print.name}
+                  {t(print.nameKey)}
                 </h3>
 
               </div>

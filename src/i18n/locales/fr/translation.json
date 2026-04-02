@@ -32,7 +32,13 @@
   },
   "featured": {
     "title": "Modèles en vedette",
-    "view": "Voir tous les modèles"
+    "view": "Voir tous les modèles",
+    "items": {
+      "tetris": "Puzzle Tetris",
+      "phoneStand": "Support à téléphone",
+      "propagationLid": "Couvercle de propagation Monstera",
+      "tulipVase": "Vase à tulipe"
+    }
   },
   "footer": {
     "navigation": "Navigation",
