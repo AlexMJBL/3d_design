@@ -199,9 +199,11 @@ export default function Models() {
 
                                     <div className="p-4">
                                         <h3 className="text-white">{model.name}</h3>
-                                        <p className="text-neutral-400 text-sm">
-                                            {model.material}
-                                        </p>
+                                        {model.material && model.material !== "N/A" && (
+                                            <p className="text-neutral-400 text-sm">
+                                                {model.material}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                             ))}
@@ -232,9 +234,11 @@ export default function Models() {
                                 {selectedModel.name}
                             </h2>
 
-                            <p className="text-cyan-400 mb-4">
-                                {selectedModel.material}
-                            </p>
+                            {selectedModel.material && selectedModel.material !== "N/A" && (
+                                <p className="text-cyan-400 mb-4">
+                                    {selectedModel.material}
+                                </p>
+                            )}
 
                             <p className="text-neutral-300 mb-6">
                                 {selectedModel.description}
